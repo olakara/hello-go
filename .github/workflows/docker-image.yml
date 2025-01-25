@@ -22,7 +22,6 @@ jobs:
         with:
           image: olakara/hello-go
           registry: docker.io
-          addLatest: true
-          dockerfile: ./src/WebApi/Dockerfile
+          addLatest: true          
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
