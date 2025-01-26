@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 )
@@ -16,5 +17,9 @@ func main() {
 		return c.SendString("v1")
 	})
 
-	app.Listen("3000")
+	err := app.Listen(":3000")
+	if err != nil {
+		fmt.Println("Error: ", err)
+		return
+	}
 }
